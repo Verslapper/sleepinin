@@ -41,13 +41,15 @@ func addMinute():
 		hour = 0
 
 func startAlarm():
-	$HUD/Label.add_color_override("font_color", Color(255,0,0,1))
+	$HUD/Label.add_color_override("font_color", Color("23eb07"))
 	pass
 
 func stopAlarm():
 	#reset to green hex colour
-	$HUD/Label.add_color_override("font_color", Color("23eb07"))
+	$HUD/Label.add_color_override("font_color", Color(255,0,0,1))
 	refreshHUD()
+	# This is how you switch levels
+	#get_tree().change_scene("Level1.tscn")
 	
 func refreshHUD():
 	$HUD/Label.set_text("Day " + str(day) + " " + paddedTo2Digits(hour) + ":" + paddedTo2Digits(minute))
