@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/sleepin-bass.ogg-d94d7a11d161931b2ec119d3b1cdcadb.oggstr"
+
+[deps]
+
+source_file="res://assets/sleepin-bass.ogg"
+dest_files=[ "res://.import/sleepin-bass.ogg-d94d7a11d161931b2ec119d3b1cdcadb.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
