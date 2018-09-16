@@ -15,8 +15,8 @@ func _ready():
 	minute = 59
 	streamPlayer = AudioStreamPlayer.new()
 	self.add_child(streamPlayer)
-	#streamPlayer.stream = load("res://assets/sleepin-bass.ogg")
-	#streamPlayer.play()
+	streamPlayer.stream = load("res://assets/sleepin-bass.ogg")
+	streamPlayer.play()
 	refreshHUD()
 	$Timer.start()
 
@@ -60,12 +60,12 @@ func stopAlarm():
 	#get_tree().change_scene("Level1.tscn")
 
 func sleep():
-	if (day == 0 && hour <= 6):
-		$HUD/PlotLabel.set_text("To: S.Bossman; Stuck in traffic, be there soon.")
+	if (day == 0 && hour <= 12):
+		$HUD/PlotLabel.set_text("That's a cheeky sleep in.")
 	elif (day == 0):
-		$HUD/PlotLabel.set_text("To: S.Bossman; Slept through my alarm, be there soon.")
+		$HUD/PlotLabel.set_text("Top shelf chucked sickie, cobber.")
 	else:
-		$HUD/PlotLabel.set_text("From: S.Bossman; Don't bother coming in tomorrow.")
+		$HUD/PlotLabel.set_text("You'd risk anything for a sleep in. Respect.")
 	
 func refreshHUD():
 	var dayText = ""
@@ -82,6 +82,22 @@ func refreshHUD():
 		appendToPlot("From: C.Tractor; Can't start work without the demo")
 	if (day == 0 && hour == 11 && minute == 11):
 		appendToPlot("From: Y.Partner; Booked the place for tonight <3")
+	if (day == 0 && hour == 14 && minute == 30):
+		appendToPlot("From: S.Bossman; Deal's off. My office. Now.")
+	if (day == 0 && hour == 19 && minute == 50):
+		appendToPlot("From: Y.Partner; Babe? Can't find you.")
+	if (day == 0 && hour == 21 && minute == 00):
+		appendToPlot("From: Y.Partner; Missing my special day?")
+	if (day == 0 && hour == 22 && minute == 30):
+		appendToPlot("From: Y.Partner; </3")
+	if (day == 1 && hour == 9 && minute == 45):
+		appendToPlot("From: S.Bossman; Don't bother coming in. Ever.")
+	if (day == 1 && hour == 13 && minute == 00):
+		appendToPlot("From: Y.Partner; Are you ok? Please come over.")
+	if (day == 1 && hour == 18 && minute == 00):
+		appendToPlot("From: Y.Partner; OMG are you dead? Let me in!")
+	if (day == 1 && hour == 19 && minute == 30):
+		appendToPlot("From: Y.Partner; ;(")
 
 func appendToPlot(text):
 	$HUD/PlotLabel.set_text($HUD/PlotLabel.text + text)
